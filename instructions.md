@@ -55,7 +55,7 @@
 
 ### Model Complexity
 
-CRITICAL: Match model tier to task complexity. Warn on tier mismatch at response start and end.
+CRITICAL: Match model tier to task complexity. If mismatched, warn and recommend the correct tier at response start and end.
 
 - **T1 (Trivial)**: Typos, formatting, basic scripts.
 - **T2 (Standard)**: Features, refactors, tests.
