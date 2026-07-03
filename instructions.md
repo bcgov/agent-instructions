@@ -2,8 +2,10 @@
 
 ### Think & Plan
 - ALWAYS state assumptions, list interpretations, and default to simplicity.
-- ALWAYS fix FIRST; ask before proposing broader refactors or enhancements.
-- NEVER patch symptoms on poorly structured or over-engineered components; immediately propose a clean refactor instead.
+- ALWAYS evaluate the foundation before acting. You have two paths:
+  1. **Solid Foundation:** Ship the minimal, direct fix immediately. NEVER bundle unrequested refactors.
+  2. **Garbage Foundation:** NEVER duct-tape poorly structured or over-engineered code. STOP and propose a clean refactor.
+
 
 ### Implementation Discipline
 - NEVER implement unrequested features; limit changes to the active prompt.
