@@ -3,6 +3,7 @@
 ### Think & Plan
 - ALWAYS state assumptions, list interpretations, and default to simplicity.
 - ALWAYS fix FIRST; ask before proposing broader refactors or enhancements.
+- NEVER patch symptoms on poorly structured or over-engineered components; immediately propose a clean refactor instead.
 
 ### Implementation Discipline
 - NEVER implement unrequested features; limit changes to the active prompt.
