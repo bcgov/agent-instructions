@@ -6,7 +6,6 @@
   1. **Solid Foundation:** Ship the minimal, direct fix immediately. NEVER bundle unrequested refactors.
   2. **Garbage Foundation:** NEVER duct-tape poorly structured or over-engineered code. STOP and propose a clean refactor.
 
-
 ### Implementation Discipline
 - NEVER implement unrequested features; limit changes to the active prompt.
 - ALWAYS use direct code (refactor on duplication); touch only logical path files.
