@@ -1,70 +1,62 @@
 ## Behavioral Guidelines
 
 ### Think & Plan
-- ALWAYS state assumptions, list interpretations, and default to simplicity.
-- ALWAYS fix FIRST; ask before proposing broader refactors or enhancements.
+- State assumptions, list interpretations, default to simplicity.
+- Fix FIRST; ask before proposing broader refactors or enhancements.
 
 ### Implementation Discipline
 - NEVER implement unrequested features; limit changes to the active prompt.
-- ALWAYS use direct code (refactor on duplication); touch only logical path files.
-- ALWAYS match project style by inspecting adjacent files; remove unused variables/imports.
-- ALWAYS default environments/toggles to PROD when variables are missing.
-- NEVER report "Done" without terminal verification (e.g., `ls`, `git status`).
-- DIFF-AS-RECEIPT: Every turn with an edit MUST include a git diff in a collapsible HTML details block (using raw HTML <details> and <summary> tags).
+- Use direct code (refactor on duplication); touch only logical path files.
+- Match project style by inspecting adjacent files; remove unused variables/imports.
+- Default environments/toggles to PROD when variables are missing.
+- DIFF-AS-RECEIPT: Every edit turn MUST include a git diff in a collapsible `<details>` block.
 
 ### Verification
-- ALWAYS define success criteria and verify against them before marking work done.
-- ALWAYS state a brief plan with verification checks for multi-step tasks.
+- Define success criteria and verify in terminal (`ls`, `git status`) before marking done.
+- State a brief plan with verification checks for multi-step tasks.
 
-### Dependencies
-- ALWAYS avoid dependencies for low-volume (<20 lines) logic.
-- ALWAYS use libraries ONLY for complex/high-risk bespoke alternatives.
-- ALWAYS verify new dependencies are lightweight and maintained.
-- ZERO SPECULATION: Verify APIs via search/run command. NEVER guess.
-- NEVER use abstract/clever solutions unless established.
+### Dependencies & Solutions
+- No dependencies for logic <20 lines. Libraries only for complex/high-risk tasks; verify they are lightweight and maintained.
+- ZERO SPECULATION: Verify APIs via search/run command. No guessing, no abstract/clever solutions unless established.
 
 ### Fail Fast
-- NEVER write silent fallbacks or rescue scripts on failure.
-- If a precondition fails, ALWAYS stop immediately (e.g., return/throw/exit) with a clear error.
+- No silent fallbacks or rescue scripts. Hard stop (`return`/`throw`/`exit`) with a clear error on failed preconditions.
 
 ## Standards
 
-### Hard Stops (Never)
-- NEVER branch from a feature branch; ALWAYS start from main.
+### Hard Stops
+- NEVER branch from a feature branch; always start from `origin/main`.
 - NEVER push to main or merge PRs; leave merging to humans.
-- NEVER rewrite history with interactive rebase or squashing (e.g., `rebase -i`, `--squash`).
-- NEVER use triple-backticks; ALWAYS wrap code/manifests in 4-backtick blocks.
-- NEVER commit or include credentials, secrets, or PII in code or PRs.
+- NEVER rewrite history (`rebase -i`, `--squash`).
+- NEVER use triple-backticks; wrap code/manifests in 4-backtick blocks.
+- NEVER commit credentials, secrets, or PII.
 - NEVER silence diagnostics (`eslint-disable`, `@ts-ignore`); fix the root cause.
-- NEVER delete failing tests; ALWAYS fix the code to make the test suite pass.
-- NEVER run `oc` commands. Access to OpenShift is restricted.
-- NEVER use credentials to post, or impersonate human contributors.
-- NEVER use `--legacy-peer-deps` with npm/npx. Always resolve peer conflicts cleanly.
+- NEVER delete failing tests; fix the code.
+- NEVER run `oc` commands. OpenShift access is restricted.
+- NEVER impersonate human contributors or use credentials to post.
+- NEVER use `--legacy-peer-deps`; resolve peer conflicts cleanly.
 - NEVER execute vague or high-risk prompts without explicit user approval.
+
 ### Operational Guardrails
-- ALWAYS push and open PRs to feature branches without asking.
-- NEVER mark work complete until verified, committed, pushed, and PR created.
-- ALWAYS stop on the first error; chain related commands with `&&`.
-- ALWAYS block SQL injection, XSS, and unsanitized inputs in code and docs.
-- For temporary storage, ALWAYS use `./.tmp/` if git-ignored, otherwise `/tmp`.
+- Push and open PRs to feature branches without asking. Never mark work complete until verified, committed, pushed, and PR created.
+- Stop on the first error; chain related commands with `&&`.
+- Block SQL injection, XSS, and unsanitized inputs in code and docs.
+- Temporary storage: `./.tmp/` if git-ignored, otherwise `/tmp`.
 
 ### Git Workflow
-1. Branching: `git fetch origin && git checkout -b feat/name origin/main && git push -u origin HEAD`.
-2. PR Creation: `unset GITHUB_TOKEN && gh pr create --fill`.
-3. Updating: ALWAYS fetch and merge `origin/main` before making new edits or pushing.
-4. Closing: ONLY if an issue is explicitly provided, use `Closes #<num>` in the PR body. Do not guess or link otherwise.
+1. Branch: `git fetch origin && git checkout -b feat/name origin/main && git push -u origin HEAD`.
+2. PR: `unset GITHUB_TOKEN && gh pr create --fill`.
+3. Update: Always fetch and merge `origin/main` before new edits or pushing.
+4. Close: Use `Closes #<num>` ONLY if an issue is explicitly provided. Never guess.
 
 ### Project Standards
-- ALWAYS use Conventional Commits.
-- ALWAYS use latest stable packages; NEVER downgrade or edit lock files silently.
-- ALWAYS use minimum permissions (e.g., `permissions: {}` in GitHub Actions).
-- NEVER add manual version tracking artifacts.
+- Conventional Commits. Latest stable packages; never downgrade or edit lock files silently.
+- Minimum permissions (e.g., `permissions: {}` in GitHub Actions). No manual version tracking artifacts.
 
 ### Model Complexity
 
-CRITICAL: Match model tier to task complexity. If mismatched, warn and recommend the correct tier at response start and end.
+CRITICAL: Warn on tier mismatch at response start and end.
 
-- **T1 (Trivial)**: Typos, formatting, basic scripts. (Warn to DOWNSCALE if T2/T3 active)
-- **T2 (Standard)**: Features, refactors, tests. (Warn to UPSCALE if T1; DOWNSCALE if T3)
-- **T3 (Architecture)**: System design, multi-repo. (Warn to UPSCALE if T1/T2 active)
-
+- **T1 (Trivial)**: Typos, formatting, basic scripts.
+- **T2 (Standard)**: Features, refactors, tests.
+- **T3 (Architecture)**: System design, multi-repo.
