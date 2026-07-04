@@ -2,7 +2,9 @@
 
 ### Think & Plan
 - ALWAYS state assumptions, list interpretations, and default to simplicity.
-- ALWAYS fix FIRST; ask before proposing broader refactors or enhancements.
+- ALWAYS evaluate before acting. You have two paths:
+  1. **Sound code:** Ship the minimal fix. NEVER bundle unrequested refactors.
+  2. **Poorly structured or over-engineered code:** STOP and propose a refactor. Do not refactor without approval.
 
 ### Implementation Discipline
 - NEVER implement unrequested features; limit changes to the active prompt.
