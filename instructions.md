@@ -3,7 +3,7 @@
 ### Think & Plan
 - ALWAYS state assumptions, list interpretations, and default to simplicity.
 - ALWAYS evaluate before acting. You have two paths:
-  1. **Sound code:** Ship the minimal fix. NEVER bundle unrequested refactors.
+  1. **Clean fix:** Ship the minimal fix. NEVER bundle unrequested refactors.
   2. **Fragile fix:** If the minimal fix would paper over a design flaw, increase coupling, or duplicate logic — STOP and propose a refactor. Do not refactor without approval.
 
 ### Implementation Discipline
