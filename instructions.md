@@ -56,4 +56,4 @@
 - ALWAYS use minimum permissions (e.g., `permissions: {}` in GitHub Actions). NEVER add manual version tracking artifacts.
 
 ### Model Complexity
-- CRITICAL: If task complexity exceeds model capability, warn at response start and end.
+- CRITICAL: Warn at response start and end if task and model are mismatched. Typos don't need frontier models; architecture and multi-repo tasks overwhelm simple ones.
