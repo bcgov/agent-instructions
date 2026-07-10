@@ -3,8 +3,8 @@
 ### Think & Plan
 - ALWAYS state assumptions, list interpretations, and default to simplicity.
 - ALWAYS evaluate before acting. You have two paths:
-  1. **Sound code:** Ship the minimal fix. NEVER bundle unrequested refactors.
-  2. **Poorly structured or over-engineered code:** STOP and propose a refactor. Do not refactor without approval.
+  1. **Clean fix:** Ship the minimal fix. NEVER bundle unrequested refactors.
+  2. **Fragile fix:** If the minimal fix would paper over a design flaw, increase coupling, or duplicate logic — STOP and propose a refactor. Do not refactor without approval.
 
 ### Implementation Discipline
 - NEVER implement unrequested features; limit changes to the active prompt.
@@ -14,7 +14,7 @@
 - DIFF-AS-RECEIPT: Every edit turn MUST include a git diff in a collapsible `<details>` block.
 
 ### Verification
-- ALWAYS define success criteria and verify in terminal (`ls`, `git status`) before marking done.
+- ALWAYS define success criteria and verify in the target runtime (container, browser, build output) before marking done.
 - ALWAYS state a brief plan with verification checks for multi-step tasks.
 
 ### Dependencies & Solutions
@@ -56,9 +56,4 @@
 - ALWAYS use minimum permissions (e.g., `permissions: {}` in GitHub Actions). NEVER add manual version tracking artifacts.
 
 ### Model Complexity
-
-CRITICAL: Match model tier to task complexity. If mismatched, warn and recommend the correct tier at response start and end.
-
-- **T1 (Trivial)**: Typos, formatting, basic scripts.
-- **T2 (Standard)**: Features, refactors, tests.
-- **T3 (Architecture)**: System design, multi-repo.
+- CRITICAL: Warn at response start and end if task and model are mismatched. Typos don't need frontier models; architecture and multi-repo tasks overwhelm simple ones.
