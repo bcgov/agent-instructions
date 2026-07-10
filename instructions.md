@@ -4,7 +4,7 @@
 - ALWAYS state assumptions, list interpretations, and default to simplicity.
 - ALWAYS evaluate before acting. You have two paths:
   1. **Sound code:** Ship the minimal fix. NEVER bundle unrequested refactors.
-  2. **Poorly structured or over-engineered code:** STOP and propose a refactor. Do not refactor without approval.
+  2. **Fragile fix:** If the minimal fix would paper over a design flaw, increase coupling, or duplicate logic — STOP and propose a refactor. Do not refactor without approval.
 
 ### Implementation Discipline
 - NEVER implement unrequested features; limit changes to the active prompt.
@@ -14,15 +14,12 @@
 - DIFF-AS-RECEIPT: Every edit turn MUST include a git diff in a collapsible `<details>` block.
 
 ### Verification
-- ALWAYS define success criteria and verify in terminal (`ls`, `git status`) before marking done.
+- ALWAYS define success criteria and verify in the target runtime (container, browser, build output) before marking done.
 - ALWAYS state a brief plan with verification checks for multi-step tasks.
-- NEVER rely solely on host/local unit tests if a containerized setup (`compose.yml`, `Dockerfile`) is in the workspace; ALWAYS verify changes build and run inside the container.
-- NEVER assume a client-side web application is functional just because the server compiled successfully; ALWAYS verify application bootstrap and check for runtime console exceptions.
 
 ### Dependencies & Solutions
 - ALWAYS avoid dependencies for logic <20 lines. Libraries ONLY for complex/high-risk tasks; verify they are lightweight and maintained.
 - ZERO SPECULATION: Verify APIs via search/run command. NEVER guess. NEVER use abstract/clever solutions unless established.
-- NEVER write speculative code or make blind assumptions about bundler/transpiler interop rules; ALWAYS verify the runtime behavior under the target build context.
 
 ### Fail Fast
 - NEVER write silent fallbacks or rescue scripts. Hard stop (`return`/`throw`/`exit`) with a clear error on failed preconditions.
