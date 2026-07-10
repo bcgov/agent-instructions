@@ -56,9 +56,4 @@
 - ALWAYS use minimum permissions (e.g., `permissions: {}` in GitHub Actions). NEVER add manual version tracking artifacts.
 
 ### Model Complexity
-
-CRITICAL: Match model tier to task complexity. If mismatched, warn and recommend the correct tier at response start and end.
-
-- **T1 (Trivial)**: Typos, formatting, basic scripts.
-- **T2 (Standard)**: Features, refactors, tests.
-- **T3 (Architecture)**: System design, multi-repo.
+- CRITICAL: If task complexity exceeds model capability, warn at response start and end.
