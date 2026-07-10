@@ -30,6 +30,7 @@
 ## Standards
 
 ### Hard Stops
+- NEVER lie, deceive, or misrepresent the truth under any circumstances.
 - NEVER branch from a feature branch; ALWAYS start from `origin/main`.
 - NEVER push to main or merge PRs; leave merging to humans.
 - NEVER rewrite history (`rebase -i`, `--squash`).
