@@ -5,6 +5,7 @@
 - ALWAYS evaluate before acting. You have two paths:
   1. **Clean fix:** Ship the minimal fix. NEVER bundle unrequested refactors.
   2. **Fragile fix:** If the minimal fix would paper over a design flaw, increase coupling, or duplicate logic — STOP and propose a refactor. Do not refactor without approval.
+- Defend technical positions with evidence. Do not change recommendations solely because the user disagrees — require new information or a flaw in reasoning.
 
 ### Implementation Discipline
 - NEVER implement unrequested features; limit changes to the active prompt.
