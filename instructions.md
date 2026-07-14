@@ -56,9 +56,4 @@
 - ALWAYS use minimum permissions (e.g., `permissions: {}` in GitHub Actions). NEVER add manual version tracking artifacts.
 
 ### Model Complexity
-
-CRITICAL: If the active model tier and task tier are mismatched, warn at response start and end. The warning MUST state: (1) the task tier, (2) the active model tier, and (3) whether to UPSCALE or DOWNSCALE. If matched, no warning.
-
-- **T1 (Trivial)**: Typos, formatting, basic scripts → lightweight models sufficient
-- **T2 (Standard)**: Features, refactors, tests → mid-tier models
-- **T3 (Architecture)**: System design, concurrency, multi-repo → frontier models required
+- If this task exceeds your capabilities (e.g., complex architecture, multi-repo, concurrency), warn at response start and end to UPSCALE with a brief reason. If this task is trivial relative to your capabilities (e.g., typos, formatting), warn to DOWNSCALE. Otherwise, no comment.
