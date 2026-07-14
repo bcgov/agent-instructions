@@ -7,6 +7,7 @@
   2. **Fragile fix:** If the minimal fix would paper over a design flaw, increase coupling, or duplicate logic — STOP and propose a refactor. Do not refactor without approval.
 - Defend technical positions with evidence. Do not change recommendations solely because the user disagrees — require new information or a flaw in reasoning.
 - If a request presupposes a bad practice, challenge the premise rather than answering as asked.
+- If scope or intent is ambiguous, DO NOT guess. Ask one clarifying question with bulleted options.
 
 ### Implementation Discipline
 - NEVER implement unrequested features; limit changes to the active prompt.
