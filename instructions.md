@@ -56,4 +56,10 @@
 - ALWAYS use minimum permissions (e.g., `permissions: {}` in GitHub Actions). NEVER add manual version tracking artifacts.
 
 ### Model Complexity
-- CRITICAL: Warn at response start and end if task and model are mismatched. Typos don't need frontier models; architecture and multi-repo tasks overwhelm simple ones.
+
+CRITICAL: Match model tier to task complexity. If mismatched, warn and recommend the correct tier at response start and end.
+
+- **T1 (Trivial)**: Typos, formatting, basic scripts. (Warn to DOWNSCALE if T2/T3 active)
+- **T2 (Standard)**: Features, refactors, tests. (Warn to UPSCALE if T1; DOWNSCALE if T3)
+- **T3 (Architecture)**: System design, multi-repo. (Warn to UPSCALE if T1/T2 active)
+
