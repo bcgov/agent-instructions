@@ -28,7 +28,6 @@ NEVER mark work complete until you have:
 
 ### Fail Fast
 - NEVER write silent fallbacks or rescue scripts. Hard stop (`return`/`throw`/`exit`) with a clear error on failed preconditions.
-- When reporting errors, summarize the root cause and provide the relevant stack trace snippet. Do not dump the entire raw log.
 
 ## Standards
 
