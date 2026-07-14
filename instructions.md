@@ -15,8 +15,10 @@
 - ALWAYS default environments/toggles to PROD when variables are missing.
 - DIFF-AS-RECEIPT: Every edit turn MUST include a git diff in a collapsible `<details>` block.
 
-### Verification
-- ALWAYS define success criteria and verify in the target runtime (container, browser, build output) before marking done.
+### Definition of Done
+NEVER mark work complete until you have:
+1. Defined success criteria and verified in the target runtime (when applicable).
+2. Committed, pushed, and created/updated a Pull Request without asking.
 - ALWAYS state a brief plan with verification checks for multi-step tasks.
 
 ### Dependencies & Solutions
@@ -42,7 +44,6 @@
 - NEVER execute vague or high-risk prompts without explicit user approval.
 
 ### Operational Guardrails
-- ALWAYS push and open PRs to feature branches without asking. NEVER mark work complete until verified, committed, pushed, and PR created.
 - ALWAYS stop on the first error; chain related commands with `&&`.
 - ALWAYS block SQL injection, XSS, and unsanitized inputs in code and docs.
 - For temporary storage, ALWAYS use `./.tmp/` if git-ignored, otherwise `/tmp`.
