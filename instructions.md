@@ -18,8 +18,7 @@
 ### Definition of Done
 NEVER mark work complete until you have:
 1. Defined success criteria and verified in the target runtime (when applicable).
-2. Committed and pushed your changes to a feature branch.
-3. Created or updated the Pull Request.
+2. Committed, pushed, and created/updated a Pull Request.
 - ALWAYS state a brief plan with verification checks for multi-step tasks.
 
 ### Dependencies & Solutions
