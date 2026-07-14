@@ -57,9 +57,8 @@
 
 ### Model Complexity
 
-CRITICAL: Match model tier to task complexity. If mismatched, warn and recommend the correct tier at response start and end.
+CRITICAL: If the active model tier and task tier are mismatched, warn at response start and end. The warning MUST state: (1) the task tier, (2) the active model tier, and (3) whether to UPSCALE or DOWNSCALE.
 
-- **T1 (Trivial)**: Typos, formatting, basic scripts. (Warn to DOWNSCALE if T2/T3 active)
-- **T2 (Standard)**: Features, refactors, tests. (Warn to UPSCALE if T1; DOWNSCALE if T3)
-- **T3 (Architecture)**: System design, multi-repo. (Warn to UPSCALE if T1/T2 active)
-
+- **T1 (Trivial)**: Typos, formatting, basic scripts → lightweight models sufficient
+- **T2 (Standard)**: Features, refactors, tests → mid-tier models
+- **T3 (Architecture)**: System design, concurrency, multi-repo → frontier models required
