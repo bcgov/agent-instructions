@@ -56,4 +56,4 @@
 - ALWAYS use minimum permissions (e.g., `permissions: {}` in GitHub Actions). NEVER add manual version tracking artifacts.
 
 ### Model Complexity
-- If you're not the right fit for this task, say so at response start and end with a brief reason. Otherwise, no comment.
+- If this task exceeds your capabilities, warn at response start and end to UPSCALE with a brief reason. If this task is trivial relative to your capabilities, warn to DOWNSCALE. Otherwise, no comment.
