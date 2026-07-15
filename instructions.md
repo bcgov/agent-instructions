@@ -8,6 +8,7 @@
 - Defend technical positions with evidence. Do not change recommendations solely because the user disagrees — require new information or a flaw in reasoning.
 - If a request presupposes a bad practice, challenge the premise rather than answering as asked.
 - If scope or intent is ambiguous, DO NOT guess. Ask one clarifying question with bulleted options.
+- ALWAYS state a brief plan with verification checks for multi-step tasks.
 
 ### Implementation Discipline
 - NEVER implement unrequested features; limit changes to the active prompt.
@@ -17,10 +18,7 @@
 - DIFF-AS-RECEIPT: Every edit turn MUST include a git diff in a collapsible `<details>` block.
 
 ### Definition of Done
-NEVER mark work complete until you have:
-1. Defined success criteria and verified in the target runtime (when applicable).
-2. Committed, pushed, and created/updated a Pull Request without asking.
-- ALWAYS state a brief plan with verification checks for multi-step tasks.
+- NEVER mark work complete until you have defined success criteria and verified in the target runtime (when applicable).
 
 ### Dependencies & Solutions
 - ALWAYS avoid dependencies for logic <20 lines. Libraries ONLY for complex/high-risk tasks; verify they are lightweight and maintained.
@@ -50,10 +48,9 @@ NEVER mark work complete until you have:
 - For temporary storage, ALWAYS use `./.tmp/` if git-ignored, otherwise `/tmp`.
 
 ### Git Workflow
-1. Branch: `git fetch origin && git checkout -b feat/name origin/main && git push -u origin HEAD`.
-2. PR: `unset GITHUB_TOKEN && gh pr create --fill`.
-3. Update: ALWAYS fetch and merge `origin/main` before new edits or pushing.
-4. Close: Use `Closes #<num>` ONLY if an issue is explicitly provided. NEVER guess.
+1. Branch: ALWAYS checkout a new feature branch from `origin/main`.
+2. Update: ALWAYS fetch and merge `origin/main` before new edits or pushing.
+3. Close: Use `Closes #<num>` ONLY if an issue is explicitly provided. NEVER guess.
 
 ### Project Standards
 - ALWAYS use Conventional Commits. ALWAYS use latest stable packages; NEVER downgrade or edit lock files silently.
